@@ -6,3 +6,4 @@ def mean(x,y):
     else:
         mean_of_evens = 0
     return mean_of_evens
+
