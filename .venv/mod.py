@@ -7,4 +7,3 @@ def mean_of_evens(x, y):
     else:
         mean_value = 0
     return mean_value
-
