@@ -18,6 +18,11 @@ def mean_of_evens(x, y):
     return mean_value
 
 m = float(input("Введіть значення m: "))
+
+while m < 1:
+    print("Значення m не може бути менше за 1.")
+    m = float(input("Введіть ще раз значення m: "))
+
 z_result = calculate_z(m)
 print("Значення виразу z =", z_result)
 
