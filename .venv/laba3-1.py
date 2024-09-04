@@ -6,4 +6,3 @@ while len(word) < 3:
 new_word = word[:1] + word[2:-2] + word[-1]
 
 print("Після зрізу другого та передостаннього символів: ", new_word)
-
