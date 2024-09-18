@@ -7,7 +7,7 @@ max_negative = None
 
 for num in arr:
     if num < 0:
-        if max_negative is None or num < max_negative:
+        if max_negative is None or num > max_negative:
             max_negative = num
 
 if max_negative is not None:
