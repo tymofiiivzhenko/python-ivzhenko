@@ -14,3 +14,4 @@ if max_negative is not None:
     print(f"Максимальний від'ємний елемент: {max_negative}")
 else:
     print("У масиві немає від'ємних елементів.")
+
