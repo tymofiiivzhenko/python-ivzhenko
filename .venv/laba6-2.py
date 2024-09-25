@@ -6,7 +6,10 @@ def find_duplicates():
 
     duplicates = [x for x in set(A) if A.count(x) > 1]
 
-    print("List of duplicates:", duplicates)
+    if duplicates:
+        print("List of duplicates:", duplicates)
+    else:
+        print("No duplicates found.")
 
     return duplicates
 
