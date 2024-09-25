@@ -1,15 +1,14 @@
 def find_duplicates():
 
-    A = list(map(int, input('Enter a list of numbers: ').split()))
-
-    print("Original list:", A)
+    A = list(map(int, input('Введіть елементи списку: ').split()))
+    print("Початковий список:", A)
 
     duplicates = [x for x in set(A) if A.count(x) > 1]
 
     if duplicates:
-        print("List of duplicates:", duplicates)
+        print("Список дуплікатів:", duplicates)
     else:
-        print("No duplicates found.")
+        print("Не знайдено дуплікатів.")
 
     return duplicates
 
