@@ -6,32 +6,34 @@ students = {
     "Poroshenko": [9, 8, 7, 6, 9, 8, 7, 8, 9, 10]
 }
 
-def display_students(students_dict):
-    for student, grades in students_dict.items():
-        print(f"Учень: {student}, Оцінки: {grades}")
+def Print(students):
+    for i in students:
+        print("Оцінки", i, " - ", students[i])
 
-def add_student(students_dict, name, grades):
-    students_dict[name] = grades
-    print(f"Запис для {name} додано.")
+def add(students, key, grade):
+    students[key] = grade
+    print("Добавлено", key, ".")
 
-def remove_student(students_dict, name):
+def Del(students, key):
     try:
-        del students_dict[name]
-        print(f"Запис для {name} видалено.")
+        del students[key]
+        print("Видалено", key, ".")
     except KeyError:
-        print(f"Запис з ім'ям {name} не знайдено.")
+        print(f"Учень з ім'ям {key} не знайдений.")
 
-def display_sorted_students(students_dict):
-    for student in sorted(students_dict.keys()):
-        print(f"Учень: {student}, Оцінки: {students_dict[student]}")
+def print_sort(students):
+    students_sorted = {k: students[k] for k in sorted(students)}
+    print("Відсортований словник: ")
+    for i in students_sorted:
+        print("Оцінки", i, " - ", students_sorted[i])
 
-def find_max_sum_student(students_dict):
-    max_student = max(students_dict, key=lambda student: sum(students_dict[student]))
-    return max_student, sum(students_dict[max_student])
+def find_max_sum_student(students):
+    max_student = max(students, key=lambda student: sum(students[student]))
+    return max_student, sum(students[max_student])
 
-def find_min_sum_student(students_dict):
-    min_student = min(students_dict, key=lambda student: sum(students_dict[student]))
-    return min_student, sum(students_dict[min_student])
+def find_min_sum_student(students):
+    min_student = min(students, key=lambda student: sum(students[student]))
+    return min_student, sum(students[min_student])
 
 def main():
     while True:
@@ -47,16 +49,16 @@ def main():
         choice = input("Оберіть опцію: ")
 
         if choice == "1":
-            display_students(students)
+            Print(students)
         elif choice == "2":
             name = input("Введіть прізвище учня: ")
             grades = list(map(int, input("Введіть оцінки через пробіл: ").split()))
-            add_student(students, name, grades)
+            add(students, name, grades)
         elif choice == "3":
             name = input("Введіть прізвище учня для видалення: ")
-            remove_student(students, name)
+            Del(students, name)
         elif choice == "4":
-            display_sorted_students(students)
+            print_sort(students)
         elif choice == "5":
             max_student, max_sum = find_max_sum_student(students)
             print(f"Учень з найбільшою сумою оцінок: {max_student}, Сума: {max_sum}")
