@@ -11,8 +11,11 @@ def Print(students):
         print("Оцінки", i, " - ", students[i])
 
 def add(students, key, grade):
-    students[key] = grade
-    print("Добавлено", key, ".")
+    if key in students:
+        print(f"Учень з ім'ям {key} вже існує.")
+    else:
+        students[key] = grade
+        print(f"Учня {key} додано.")
 
 def Del(students, key):
     try:
