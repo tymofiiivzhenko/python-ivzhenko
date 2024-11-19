@@ -23,5 +23,5 @@ colors = plt.cm.Paired(range(len(labels)))
 plt.figure(figsize=(8, 8))
 plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
 plt.title("Середні бали по предметах")
-plt.axis('equal')  # Кругова діаграма кругла
+plt.axis('equal')
 plt.show()
